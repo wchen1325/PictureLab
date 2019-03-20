@@ -25,6 +25,27 @@ public class PictureTester
     caterpillar.mirrorVertical();
     caterpillar.explore();
   }
+
+  public static void testMirrorVerticalRightToLeft(){
+    Picture temple = new Picture("temple.jpg");
+    temple.explore();
+    temple.mirrorVerticalRightToLeft();
+    temple.explore();
+  }
+
+  public static void testMirrorHorizontal(){
+    Picture temple = new Picture("temple.jpg");
+    temple.explore();
+    temple.mirrorHorizontal();
+    temple.explore();
+
+  }
+  public static void testMirrorHorizontalBotToTop(){
+    Picture temple = new Picture("temple.jpg");
+    temple.explore();
+    temple.mirrorHorizontalBotToTop();
+    temple.explore();
+  }
   
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
@@ -87,13 +108,16 @@ public class PictureTester
     // and comment out the ones you don't want
     // to run
     //testZeroBlue();
-    testKeepOnlyBlue();
+    //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
-    testNegate();
-    testGrayscale();
-    testFixUnderwater();
+    //testNegate();
+    //testGrayscale();
+    //testFixUnderwater();
     //testMirrorVertical();
+    //testMirrorVerticalRightToLeft();
+    //testMirrorHorizontal();
+    testMirrorHorizontalBotToTop();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
