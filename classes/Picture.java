@@ -173,10 +173,10 @@ public class Picture extends SimplePicture
     int width = pixels[0].length;
     for (int row = 0; row < pixels.length; row++)
     {
-      for (int col = 0; col < pixels.length; col++)
+      for (int col = 0; col < pixels[0].length-width; col++)
       {
-        botPixel = pixels[pixels.length - 1 -row][col];
-        topPixel = pixels[row][pixels[row].length -1 - col];
+        botPixel = pixels[row][col];
+        topPixel = pixels[col][row];
         topPixel.setColor(botPixel.getColor());
       }
       width= width -1;
