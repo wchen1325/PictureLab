@@ -122,6 +122,25 @@ public class PictureTester
     water.mirrorGull();
     water.explore();
   }
+
+  public static void testCopy(){
+    Picture water = new Picture("seagull.jpg");
+    Picture water2 = new Picture("redMotorcycle.jpg");
+    water.explore();
+    water2.copy(water,0,450,0,600);
+    water2.explore();
+  }
+
+  public static void testMyCollage(){
+    Picture collage = new Picture(1000,1000);
+    Picture robot = new Picture("robot.jpg");
+    collage.copy(robot,0,100,1,100);
+    robot.mirrorHorizontal();
+    collage.copy(robot,200,300,200,300);
+    robot.keepOnlyBlue();
+    collage.copy(robot,100,200,100,200);
+    collage.explore();
+  }
   
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -143,8 +162,9 @@ public class PictureTester
     //testMirrorHorizontalBotToTop();
     //testMirrorTemple();
     //testMirrorArms();
-    testMirrorGull();
+    //testMirrorGull();
     //testMirrorDiagonal();
+    testMyCollage();
     //testCollage();
     //testCopy();
     //testEdgeDetection();
