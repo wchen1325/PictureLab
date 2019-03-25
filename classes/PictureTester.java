@@ -115,6 +115,13 @@ public class PictureTester
     water.mirrorArms();
     water.explore();
   }
+
+  public static void testMirrorGull(){
+    Picture water = new Picture("seagull.jpg");
+    water.explore();
+    water.mirrorGull();
+    water.explore();
+  }
   
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -135,8 +142,8 @@ public class PictureTester
     //testMirrorHorizontal();
     //testMirrorHorizontalBotToTop();
     //testMirrorTemple();
-    testMirrorArms();
-    //testMirrorGull();
+    //testMirrorArms();
+    testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
