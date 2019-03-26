@@ -350,25 +350,22 @@ public class Picture extends SimplePicture
           leftPixel.setColor(Color.WHITE);
       }
     }
-
-    /*Pixel topPixel = null;
-    Pixel bottomPixel = null;
-    Color bottomColor = null;
-    for (int row = 0; row < pixels.length; row++)
-    {
-      for (int col = 0;
-           col < pixels[0].length-1; col++)
-      {
-        topPixel = pixels[row][col];
-        bottomPixel = pixels[row][col+1];
-        bottomColor = bottomPixel.getColor();
-        if (topPixel.colorDistance(bottomColor) >
-                edgeDist)
-          topPixel.setColor(Color.BLACK);
-        else
-          topPixel.setColor(Color.WHITE);
-      }*/
+  }
+  public void edgeDetection2(int pRow, int pCol, int edgeDist){
+    Pixel[][] pixels = this.getPixels2D();
+    Pixel targetColor = pixels[pRow][pCol];
+    for (int row = 0; row < pixels.length-1;row++) {
+      for (int col = 0; col < pixels[0].length - 1; col++) {
+          if(targetColor.colorDistance(pixels[row+1][col].getColor()) > edgeDist
+                  || targetColor.colorDistance(pixels[row][col+1].getColor()) > edgeDist){
+            pixels[row][col].setColor(Color.BLACK);
+          }
+          else{
+            pixels[row][col].setColor(Color.WHITE);
+          }
+      }
     }
+  }
 
   public void keepOnlyBlue()
   {
