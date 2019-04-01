@@ -424,6 +424,52 @@ public class Picture extends SimplePicture
   /* Main method for testing - each class in Java can have a main 
    * method 
    */
+
+public int getCountRedOverValue(int value){
+  Pixel[][] pixels = this.getPixels2D();
+  int count = 0;
+  for(int i = 0; i< pixels.length; i++){
+    for(int j = 0; j < pixels[i].length; j++){
+      if (pixels[i][j].getRed() > value){
+        count++;
+      }
+    }
+  }
+  return count;
+}
+
+public void setRedToHalfValueInTopHalf(){
+  Pixel[][] pixels = this.getPixels2D();
+  for(int i = 0; i < pixels.length/2; i++){
+    for(int j = 0; i<pixels[i].length; j++){
+      pixels[i][j].setRed(pixels[i][j].getRed()/2);
+    }
+  }
+}
+
+public void clearBlueOverValue(int value){
+  Pixel[][] pixels = this.getPixels2D();
+  for ( int i =0; i<pixels.length; i++){
+    for(int j =0; j<pixels[i].length; j++){
+      if(pixels[i][j].getBlue() > value){
+        pixels[i][j].setBlue(0);
+      }
+    }
+  }
+}
+
+public int[] getAverageForColumn(int col){
+  Pixel[][] pixels=this.getPixels2D();
+  int[] colAvg = new int[pixels.length];
+  for(int i = 0; i < pixels.length; i++){
+    int red = pixels[i][col].getRed();
+    int blue = pixels[i][col].getBlue();
+    int green = pixels[i][col].getGreen();
+    colAvg[i] =(red+blue+green)/3;
+  }
+  return colAvg;
+}
+
   public static void main(String[] args) 
   {
     Picture beach = new Picture("beach.jpg");
